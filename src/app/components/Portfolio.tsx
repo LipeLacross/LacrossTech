@@ -5,11 +5,11 @@ import Image from 'next/image'; // Importando o componente Image do Next.js
 
 import imgLipeLacross from '../assets/redes-sociais-lipelacross.jpeg';
 import imgCertificados1 from '../assets/Sistema de Geração de Certificados 1.png';
-import imgSuatmb from '../assets/suatmb.jpeg';
-import imgDecodificaTudo from '../assets/decodificatudo.jpeg';
-import imgBiturytech from '../assets/biturytech.jpeg';
-import imgBolosDaNilda from '../assets/bolosdanilda.jpeg';
-import imgBatuqueWeb from '../assets/batuque-web.png';
+import imgSuatmb from '../assets/suatmb.jpeg'; // Se não usado, remova
+import imgDecodificaTudo from '../assets/decodificatudo.jpeg'; // Se não usado, remova
+import imgBiturytech from '../assets/biturytech.jpeg'; // Se não usado, remova
+import imgBolosDaNilda from '../assets/bolosdanilda.jpeg'; // Se não usado, remova
+import imgBatuqueWeb from '../assets/batuque-web.png'; // Se não usado, remova
 
 const Portfolio: React.FC = () => {
   const projetos = [
@@ -53,7 +53,6 @@ const Portfolio: React.FC = () => {
             {projetos.map((projeto) => (
               <div className="projeto" key={projeto.titulo}>
                 <h3 className="projeto__titulo">{projeto.titulo}</h3>
-                {/* Alteração: Usando o componente Image do Next.js */}
                 <Image
                   className="projeto__imagem"
                   src={projeto.imagem}

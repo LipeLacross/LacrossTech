@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/About.sass';
 import profileImage from '../assets/Photo_Profile.png';
 import ScrollToTopButton from './ScrollToTopButton';
+import Image from 'next/image'; // Importando o componente Image do Next.js
 
 function About() {
     return (
@@ -15,7 +16,7 @@ function About() {
                     Estou em busca de oportunidades para aplicar minhas habilidades em projetos desafiadores. Embora eu ainda não tenha experiência profissional formal, meu comprometimento com o aprendizado e minha paixão pela tecnologia me motivam a buscar constantemente novos conhecimentos e a enfrentar desafios que me ajudem a crescer como profissional.
                 </p>
             </section>
-            <img className="sobre__imagem" src={profileImage} alt="Foto de Felipe" />
+            <Image className="sobre__imagem" src={profileImage} alt="Foto de Felipe" width={300} height={300} />
             <ScrollToTopButton />
         </main>
     );
