@@ -1,0 +1,25 @@
+.maintenance-overlay
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, 0.8)  /* Cor de fundo preta com opacidade */
+  color: white
+  display: flex
+  justify-content: center
+  align-items: center
+  z-index: 1000
+  backdrop-filter: blur(70px)  /* Aplica o desfoque apenas no fundo, sem afetar o texto */
+
+  .maintenance-overlay__content
+    text-align: center
+    font-family: sans-serif
+    z-index: 1001  /* Garante que o conteúdo da manutenção fique acima do fundo borrado */
+
+    h1
+      font-size: 3rem
+      margin-bottom: 1rem
+
+    p
+      font-size: 2rem

@@ -1,0 +1,194 @@
+@import 'variables'
+@import 'mixins'
+
+.portfolio__sobre
+  padding: 5% 15%
+  display: flex
+  flex-direction: column
+  align-items: center
+  @include slideDown(1s, ease-out)
+
+.portfolio__titulo
+  font-size: 2.8rem
+  font-family: $fonte-primaria
+  color: #FFFFFF
+  margin-bottom: 1rem
+  @include fadeIn(1s, ease-in)
+
+.portfolio__texto
+  font-size: 1.6rem
+  font-family: $fonte-secundaria
+  color: $cor-secundaria
+  line-height: 1.8
+  text-align: center
+  max-width: 800px
+  margin-bottom: 4rem
+  @include slideUp(1s, ease-out)
+
+.portfolio__projetos
+  padding: 5% 15%
+  margin-bottom: 0
+  @include fadeIn(1s, ease-in)
+
+.portfolio__destaque-titulo
+  font-size: 3.2rem
+  font-family: $fonte-primaria
+  color: $cor-terciaria
+  text-align: center
+  @include swing(1s, ease-in-out)
+
+.portfolio__lista-projetos
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  gap: 1rem
+  max-width: 1200px
+  margin: 0 auto
+
+.projeto
+  color: $cor-primaria
+  background-image: linear-gradient(8800deg, $cor-terciaria, orange)
+  padding: 1.5rem
+  border-radius: 8px
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1)
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+  transition: transform 0.3s ease, box-shadow 0.3s ease
+  text-align: center
+  font-family: $fonte-secundaria
+  margin-top: -3rem
+  width: 100%
+  box-sizing: border-box
+  min-height: auto
+  margin-bottom: 4rem
+  @include fadeIn(1s, ease-in)
+
+.projeto:hover
+  transform: scale(1.05)
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2)
+
+.projeto__imagem
+  width: 100%
+  max-height: 150px
+  border-radius: 6px
+  margin-bottom: 1rem
+  object-fit: cover
+  @include zoomIn(1s, ease-out)
+
+.projeto__titulo
+  color: $cor-primaria
+  font-size: 1.8rem
+  margin-bottom: 0.5rem
+  font-weight: 600
+  line-height: 1.4
+  @include swing(1s, ease-in-out)
+
+.projeto__descricao
+  color: $cor-text
+  font-weight: bolder
+  font-size: 1.1rem
+  margin-bottom: 1rem
+  line-height: 1.8
+  @include slideInLeft(1s, ease-in)
+
+.projeto__funcionalidades
+  color: $cor-text
+  font-size: 1rem
+  margin-bottom: 1rem
+  text-align: left
+  line-height: 1.8
+  @include slideInLeft(1s, ease-out)
+
+.projeto__funcionalidades ul
+  padding-left: 1.5rem
+  list-style-type: disc
+  @include fadeIn(1s, ease-in)
+
+.projeto__funcionalidades ul li
+  margin-bottom: 0.5rem
+  @include slideUp(1s, ease-out)
+
+.projeto__links
+  display: flex
+  gap: 2rem
+  margin-top: 1rem
+  padding: 0
+  margin: 0
+  @include fadeIn(1s, ease-in)
+
+.projeto__link
+  color: $cor-primaria
+  font-weight: 600
+  display: flex
+  align-items: center
+  transition: color 0.3s ease
+  margin: 0
+  @include slideInLeft(1s, ease-out)
+  text-decoration: none
+
+
+.projeto__link a
+  text-decoration: none
+  color: $cor-primaria
+
+
+.projeto__link i
+  margin-right: 0.5rem
+  color: $cor-primaria
+
+.projeto__link:hover
+  color: $cor-hover
+
+@media (max-width: 1200px)
+  .portfolio__destaque-titulo
+    font-size: 2.5rem
+
+  .portfolio__lista-projetos
+    grid-template-columns: repeat(2, 1fr)
+
+@media (max-width: 800px)
+  .portfolio__destaque-titulo
+    font-size: 2rem
+
+  .portfolio__lista-projetos
+    grid-template-columns: 1fr
+
+@media (max-width: 600px)
+  .portfolio__destaque-titulo
+    font-size: 1.8rem
+
+  .portfolio__titulo
+    font-size: 2rem
+
+  .portfolio__texto
+    font-size: 1.4rem
+
+  .projeto__titulo
+    font-size: 1.2rem
+
+  .projeto__descricao
+    font-size: 0.9rem
+
+  .projeto__funcionalidades
+    font-size: 0.9rem
+
+@media (max-width: 450px)
+  .portfolio__destaque-titulo
+    font-size: 1.5rem
+    margin-bottom: 1rem
+
+  .portfolio__titulo
+    font-size: 1.6rem
+
+  .portfolio__texto
+    font-size: 1.2rem
+
+  .projeto__titulo
+    font-size: 1.3rem
+
+  .projeto__descricao
+    font-size: 0.9rem
+
+  .projeto__funcionalidades
+    font-size: 0.8rem

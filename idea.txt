@@ -1,0 +1,19 @@
+Soluções Web que impulsionam ideias.
+Sou Felipe Moreira, desenvolvedor Fullstack. Crio sistemas e sites personalizados para pequenos negócios que querem se destacar no digital. Agilidade, qualidade e foco no que realmente traz resultado.
+
+Vamos tirar sua ideia do papel?
+
+
+o site é em next.js, com typescript e sass, tem que fazer uma reforma de palavras para e referir a LacrossTech
+
+Serviço	Detalhes
+Registro de Domínio (.com.br)	Domínio registrado no Registro.br
+Hospedagem (Plano Premium)	Hospedagem otimizada para WordPress, com 1 caixa de e-mail grátis por 1 ano e Certificado SSL
+Certificado SSL	Certificado SSL grátis com o plano de hospedagem
+E-mail Profissional	E-mail personalizado com o domínio do cliente
+Serviço 1 - Desenvolvimento de Site (site de apresentação com funcionalidades básicas)	Design simples ou personalizado, com a configuração inicial do site
+Manutenção Anual	Renovação do domínio, hospedagem e e-mail, sem custos adicionais de suporte
+Manutenção Adicional (opcional)	Suporte contínuo, atualizações regulares, backup adicional, ajustes de design e SEO
+Cobrança Mensal de Manutenção	Manutenção básica (renovação de domínio e e-mail)
+Serviço 3 - Artes Customizadas (opcional e com custo adicional para o cliente)	Criação de logos, banners, materiais gráficos e personalizações para o site
+Serviço 2 - Desenvolvimento de Aplicação de pequeno a médio porte (com back-end)	Desenvolvimento completo de aplicação, incluindo back-end, banco de dados, integração com API
