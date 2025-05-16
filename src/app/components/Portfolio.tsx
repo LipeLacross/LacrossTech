@@ -5,11 +5,6 @@ import Image from 'next/image'; // Importando o componente Image do Next.js
 
 import imgLipeLacross from '../assets/redes-sociais-lipelacross.jpeg';
 import imgCertificados1 from '../assets/Sistema de Geração de Certificados 1.png';
-import imgSuatmb from '../assets/suatmb.jpeg'; // Se não usado, remova
-import imgDecodificaTudo from '../assets/decodificatudo.jpeg'; // Se não usado, remova
-import imgBiturytech from '../assets/biturytech.jpeg'; // Se não usado, remova
-import imgBolosDaNilda from '../assets/bolosdanilda.jpeg'; // Se não usado, remova
-import imgBatuqueWeb from '../assets/batuque-web.png'; // Se não usado, remova
 
 const Portfolio: React.FC = () => {
   const projetos = [
