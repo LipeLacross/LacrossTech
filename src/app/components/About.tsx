@@ -15,7 +15,7 @@ function About() {
                     Estou em busca de oportunidades para aplicar minhas habilidades em projetos desafiadores. Embora eu ainda não tenha experiência profissional formal, meu comprometimento com o aprendizado e minha paixão pela tecnologia me motivam a buscar constantemente novos conhecimentos e a enfrentar desafios que me ajudem a crescer como profissional.
                 </p>
             </section>
-            <img className="sobre__imagem" src={profileImage} alt="Foto de Felipe" />
+            <img className="sobre__imagem" src={profileImage.src} alt="Foto de Felipe" />
             <ScrollToTopButton />
         </main>
     );
