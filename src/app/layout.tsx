@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat, Krona_One } from "next/font/google";
 import "./styles/main.sass";
 
-const geistSans = Geist({
+const kronaOne = Krona_One({
   subsets: ["latin"],
-  display: 'swap',
-  variable: '--font-geist-sans'
+  weight: '400',
+  variable: '--font-krona-one'
 });
 
-const geistMono = Geist_Mono({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  display: 'swap',
-  variable: '--font-geist-mono'
+  weight: ['400', '600'],
+  variable: '--font-montserrat'
 });
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${geistSans.variable} ${geistMono.variable}`}
+      className={`${kronaOne.variable} ${montserrat.variable}`}
       suppressHydrationWarning={true}
     >
       <body suppressHydrationWarning={true}>
