@@ -3,7 +3,6 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import About from "@/app/components/About";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-import MaintenanceOverlay from './components/MaintenanceOverlay';
 import Services from "./components/Services";
 import BusinessPartner from "@/app/components/BusinessPartner";
 import Opening from "@/app/components/Opening";
