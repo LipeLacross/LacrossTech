@@ -37,11 +37,11 @@ const services = [
   },
   {
     icon: <FaTools color="#FFDD48" size={28} />,
-    name: 'Manutenção Adicional (Sob demanda)',
+    name: 'Manutenção Adicional (Sob demanda, com revisão)',
     initial: 'A partir de R$ 50,00',
     annual: '-',
     monthly: '-',
-    details: 'Alterações no design, inclusão de novas seções ou funcionalidades.',
+    details: 'Alterações no design, inclusão de novas seções ou funcionalidades. Inclui revisão.',
   },
   {
     icon: <FaSyncAlt color="#FFDD48" size={28} />,
