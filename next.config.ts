@@ -1,17 +1,27 @@
-import type { NextConfig } from "next";
 import path from "node:path";
+import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true, // Habilita o modo estrito para detectar problemas durante o desenvolvimento
-  swcMinify: true, // Habilita minificação via SWC, mais rápida que o Terser
+  reactStrictMode: true,
   images: {
-    domains: ['example.com'], // Permite imagens de domínios específicos (adapte para seu projeto)
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**", // Permite todas as origens externas
+      },
+    ],
   },
   sassOptions: {
-    // Inclui pastas adicionais para Sass se necessário
-    includePaths: [path.join(__dirname, 'src', 'styles')],
+    includePaths: [path.join(__dirname, "src", "styles")],
   },
-  // Outras configurações adicionais...
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      issuer: { and: [/\.(js|ts)x?$/] },
+      use: ["@svgr/webpack", ],
+    });
+    return config;
+  },
 };
 
 export default nextConfig;

@@ -1,13 +1,62 @@
-@import 'variables'
-@import 'mixins'
+@use './variables' as *
+@use './mixins' as *
 
 .apresentacao
-  padding: 5% 15%
+  padding: 5% 3%
   display: flex
+  margin-top: 5.7rem
   flex-direction: row
   align-items: flex-start
   justify-content: space-between
   flex-wrap: wrap
+  min-height: 45vh
+  background: linear-gradient(120deg, #191919 80%, $cor-terciaria 140%)
+  border-radius: 32px
+  box-shadow: 0 8px 36px rgba(0,0,0,0.16)
+  position: relative
+  overflow: hidden
+  max-width: 1000px
+  margin-left: auto
+  margin-right: auto
+  @include fadeIn(1.2s)
+
+  &::before
+    content: ''
+    position: absolute
+    left: -80px
+    top: -80px
+    width: 260px
+    height: 260px
+    background: radial-gradient(circle, $cor-terciaria 0%, transparent 70%)
+    opacity: 0.15
+    filter: blur(12px)
+    z-index: 0
+    animation: floatGlow 8s ease-in-out infinite alternate
+
+  &::after
+    content: ''
+    position: absolute
+    right: -60px
+    bottom: -60px
+    width: 180px
+    height: 180px
+    background: radial-gradient(circle, #fffbe8 0%, transparent 80%)
+    opacity: 0.13
+    filter: blur(10px)
+    z-index: 0
+    animation: floatGlow2 10s ease-in-out infinite alternate
+
+@keyframes floatGlow
+  0%
+    transform: scale(1) translateY(0)
+  100%
+    transform: scale(1.12) translateY(24px)
+
+@keyframes floatGlow2
+  0%
+    transform: scale(1) translateY(0)
+  100%
+    transform: scale(1.08) translateY(-18px)
 
 .apresentacao__conteudo
   width: 45%
@@ -15,23 +64,64 @@
   flex-direction: column
   gap: 40px
   order: 1
+  position: relative
+  z-index: 1
 
 .apresentacao__conteudo__titulo
   font-size: 2.25rem
   font-family: $fonte-primaria
-  @include slideInLeft
+  font-weight: 700
+  letter-spacing: 1.2px
+  color: $cor-secundaria
+  text-shadow: 0 0 12px $cor-terciaria, 0 0 24px #fffbe8, 0 0 32px $cor-terciaria, 0 2px 14px rgba(0,0,0,0.18)
+  margin-bottom: 0.8rem
+  @include slideInLeft(1.1s)
+  animation: glowTitulo 2.2s ease-in-out infinite alternate
+
+@keyframes glowTitulo
+  0%
+    text-shadow: 0 0 1px $cor-terciaria, 0 0 12px #fffbe8, 0 2px 14px rgba(0,0,0,0.18)
+  100%
+    text-shadow: 0 0 8px $cor-terciaria, 0 0 48px #fffbe8, 0 2px 24px rgba(0,0,0,0.22)
+
+
 
 .titulo-destaque
   color: $cor-terciaria
+  text-shadow: 0 2px 18px rgba(255,221,72,0.18)
+  font-size: 2.3rem
+  letter-spacing: 2px
+  @include swing(1.2s)
+  background: linear-gradient(90deg, $cor-terciaria 20%, #fffbe8 50%, $cor-terciaria 80%)
+  background-size: 200% auto
+  background-clip: text
+  -webkit-background-clip: text
+  color: transparent
+  -webkit-text-fill-color: transparent
+  animation: brilhoTitulo 2.8s linear infinite
+
+@keyframes brilhoTitulo
+  0%
+    background-position: 200% 0
+  100%
+    background-position: 0 0
 
 .apresentacao__conteudo__texto
   font-size: 1.5rem
   font-family: $fonte-secundaria
-  @include slideInLeft
+  color: $cor-secundaria
+  line-height: 1.7
+  margin-bottom: 1rem
+  @include fadeIn(1.4s)
+  animation-delay: 0.3s
 
 .apresentacao__conteudo__texto a
   text-decoration: none
   color: $cor-terciaria
+  font-weight: 600
+  transition: color 0.3s
+  &:hover
+    color: #fffbe8
 
 .apresentacao__imagens
   width: 45%
@@ -42,7 +132,10 @@
   align-items: center
   order: 2
   margin-left: 5%
-  @include slideInRight
+  position: relative
+  z-index: 1
+  @include slideInRight(1.1s)
+  animation-delay: 0.2s
 
 .apresentacao__imagens img
   width: 100%
@@ -51,7 +144,14 @@
   object-fit: cover
   border: 3px solid $cor-terciaria
   border-radius: 40px
-  @include fadeIn
+  box-shadow: 0 4px 24px rgba(255,221,72,0.10)
+  @include zoomIn(1.2s)
+  transition: box-shadow 0.3s, transform 0.3s, filter 0.3s
+  filter: brightness(0.98)
+  &:hover
+    box-shadow: 0 8px 40px 0 rgba(255,221,72,0.22)
+    transform: scale(1.03) rotate(-2deg)
+    filter: brightness(1.08) drop-shadow(0 0 16px #ffe066)
 
 .apresentacao__imagens--hidden
   display: none
@@ -63,12 +163,36 @@
   align-items: center
   gap: 32px
   order: 3
-  @include slideInLeft
+  position: relative
+  z-index: 2
+  @include fadeIn(1.6s)
+  animation-delay: 0.4s
 
 .apresentacao__links__subtitulo
   font-family: $fonte-primaria
   font-weight: 400
   font-size: 1.5rem
+  color: $cor-terciaria
+  letter-spacing: 1px
+  margin-bottom: 0.5rem
+  @include slideDown(0.8s)
+
+.apresentacao__links
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 32px
+
+.apresentacao__links
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 32px
+
+  // Quando hover em qualquer link, todos param a animação
+  &:hover .apresentacao__links__navegacao
+    animation-play-state: paused
+    transform: scale(1)
 
 .apresentacao__links__navegacao
   display: flex
@@ -85,16 +209,52 @@
   text-decoration: none
   color: $cor-secundaria
   font-family: $fonte-secundaria
-  transition: background-color 0.3s, transform 0.3s
+  background: rgba(0,0,0,0.07)
+  box-shadow: 0 2px 8px rgba(255,221,72,0.06)
+  transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s
+  animation: growUpDown 2.8s cubic-bezier(0.4,0,0.2,1) infinite
 
-.apresentacao__links__navegacao img
-  width: 15%
-  margin-right: 3px
-  vertical-align: middle
+  img
+    width: 15%
+    margin-right: 3px
+    vertical-align: middle
+    filter: drop-shadow(0 0 8px #fffbe8)
 
-.apresentacao__links__navegacao:hover
-  background-color: $cor-hover
-  transform: scale(1.05)
+  &:hover
+    background-color: $cor-hover
+    color: #222
+    transform: scale(1.07) translateY(-2px)
+    box-shadow: 0 4px 18px 0 rgba(255,221,72,0.18)
+    animation-play-state: paused
+    img
+      filter: brightness(1.15) drop-shadow(0 0 16px #ffe066)
+
+  // Delays para animar em ordem
+  &:nth-child(1)
+    animation-delay: 0s
+  &:nth-child(2)
+    animation-delay: 0.18s
+  &:nth-child(3)
+    animation-delay: 0.36s
+  &:nth-child(4)
+    animation-delay: 0.54s
+  &:nth-child(5)
+    animation-delay: 0.74s
+
+@keyframes growUpDown
+  0%, 100%
+    transform: scale(1)
+  50%
+    transform: scale(1.10)
+
+
+
+@keyframes growUpDown
+  0%, 100%
+    transform: scale(1)
+  50%
+    transform: scale(1.1)
+
 
 @media (max-width: 1200px)
   .apresentacao
@@ -148,7 +308,9 @@
   .apresentacao__imagens img:nth-child(2)
     @media (max-width: 768px)
       display: none
-
+  .apresentacao__imagens img:nth-child(3)
+    @media (max-width: 768px)
+      display: none
   .apresentacao__links
     width: 80%
     order: 3
@@ -168,7 +330,7 @@
 
   .apresentacao__links__navegacao
     font-size: 1.2rem
-    width: 90%
+    width: 70%
 
   .apresentacao__imagens img
     max-height: 9rem

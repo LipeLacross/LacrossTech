@@ -1,0 +1,188 @@
+@use './variables' as *
+@use './mixins' as *
+@use 'sass:color'
+
+.partner-highlight-section
+  padding: 5% 10%
+  background: linear-gradient(120deg, #191919 80%, $cor-terciaria 140%)
+  border-radius: 24px
+  margin: 3rem auto
+  max-width: 800px
+  box-shadow: 0 6px 32px rgba(0,0,0,0.22)
+  @include fadeIn(1s)
+
+.partner-highlight-title
+  color: $cor-terciaria
+  font-family: $fonte-primaria
+  font-size: 2.2rem
+  text-align: center
+  margin-bottom: 2.5rem
+  letter-spacing: 1px
+  @include swing(1.2s)
+
+.partner-card
+  display: flex
+  align-items: center
+  gap: 2.5rem
+  background: #111
+  border-radius: 18px
+  padding: 2.2rem 2rem
+  opacity: 0
+  transform: translateX(120px) scale(0.96)
+  border: 2.5px solid transparent
+  transition: all 0.7s cubic-bezier(0.4,0,0.2,1)
+  will-change: transform, opacity
+
+  &.enter
+    opacity: 1
+    transform: translateX(0) scale(1)
+    border-color: $cor-terciaria
+    box-shadow: 0 8px 32px rgba(255,221,72,0.22)
+
+  &:hover
+    box-shadow: 0 12px 48px 0 rgba(255,221,72,0.26)
+    border-color: lighten($cor-terciaria, 7%)
+    background: linear-gradient(120deg, #191919 60%, $cor-terciaria 200%)
+    @include pulse(4.0s)
+
+    .partner-logo-glow
+      box-shadow: 0 0 32px 7px $cor-terciaria
+      @include rubberBand(1s)
+
+.partner-logo-glow
+  width: 140px
+  height: 140px
+  border-radius: 50%
+  background: #fff
+  display: flex
+  align-items: center
+  justify-content: center
+  box-shadow: 0 0 18px 2px $cor-terciaria
+
+.partner-logo-img
+  width: 110px
+  height: 110px
+  object-fit: contain
+  border-radius: 50%
+  filter: drop-shadow(0 0 8px #fffbe8)
+  @include pulse(1.8s)
+
+.partner-info
+  display: flex
+  flex-direction: column
+  gap: 0.8rem
+  @include fadeIn(1s)
+
+.partner-name
+  color: $cor-terciaria
+  font-family: $fonte-primaria
+  font-size: 1.6rem
+  font-weight: 700
+  letter-spacing: 0.5px
+  @include slideDown(0.5s)
+
+.partner-desc
+  color: $cor-secundaria
+  font-family: $fonte-secundaria
+  font-size: 1.08rem
+  line-height: 1.6
+  @include fadeIn(1.2s)
+
+.partner-link
+  display: inline-flex
+  align-items: center
+  gap: 0.2rem
+  background: $cor-terciaria
+  color: #222
+  font-family: $fonte-secundaria
+  font-weight: 700
+  font-size: 1.01rem
+  padding: 0.6rem 1.2rem
+  border-radius: 12px
+  text-decoration: none
+  box-shadow: 0 2px 8px rgba(255,221,72,0.10)
+  transition: background 0.3s cubic-bezier(0.4,0,0.2,1), color 0.3s cubic-bezier(0.4,0,0.2,1), transform 0.22s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s cubic-bezier(0.4,0,0.2,1)
+
+  &:hover
+    background: #fffbe8
+    color: #111
+    transform: scale(1.09) translateY(-2px)
+    box-shadow: 0 0 18px 3px #ffe066, 0 2px 12px rgba(255,221,72,0.18)
+    filter: brightness(1.08)
+    @include pulse(0.8s)
+
+@media (max-width: 900px)
+  .partner-highlight-section
+    padding: 7% 3%
+    max-width: 99vw
+  .partner-highlight-title
+    font-size: 1.6rem
+    margin-bottom: 1.2rem
+
+@media (max-width: 700px)
+  .partner-highlight-section
+    padding: 7% 2%
+    max-width: 99vw
+    @include zoomIn(0.8s)
+  .partner-highlight-title
+    font-size: 1.25rem
+    margin-bottom: 0.9rem
+
+  .partner-card
+    flex-direction: column
+    gap: 1.2rem
+    padding: 1.2rem 0.4rem
+
+  .partner-logo-glow
+    width: 90px
+    height: 90px
+    @include rotate(0.8s)
+
+  .partner-logo-img
+    width: 68px
+    height: 68px
+
+  .partner-info
+    align-items: center
+    text-align: center
+    @include fadeIn(0.8s)
+
+  .partner-name
+    font-size: 1.15rem
+
+  .partner-desc
+    font-size: 0.93rem
+
+@media (max-width: 400px)
+  .partner-highlight-section
+    padding: 4% 0.5%
+    max-width: 100vw
+  .partner-highlight-title
+    font-size: 1rem
+    margin-bottom: 0.5rem
+
+  .partner-card
+    padding: 0.7rem 0.1rem
+
+  .partner-logo-glow
+    width: 62px
+    height: 62px
+
+  .partner-logo-img
+    width: 44px
+    height: 44px
+
+  .partner-name
+    font-size: 0.92rem
+
+  .partner-desc
+    font-size: 0.8rem
+
+  .partner-link
+    font-size: 0.85rem
+    padding: 0.4rem 0.7rem
+
+@media (prefers-reduced-motion: reduce)
+  .partner-card, .partner-logo-glow, .partner-link
+    animation: none !important
+    transition: none !important

@@ -1,32 +1,81 @@
-@import 'variables'
-@import 'mixins'
+@use './variables' as *
+@use './mixins' as *
+@use 'sass:color'
 
 .scroll-to-top
   position: fixed
-  bottom: 20px
-  right: 20px
-  background-color: $cor-terciaria
-  color: #fff
+  bottom: 32px
+  right: 32px
+  width: 60px
+  height: 60px
+  background: linear-gradient(135deg, $cor-terciaria 70%, #fffbe8 100%)
+  color: #222
   border: none
   border-radius: 50%
-  width: 50px
-  height: 50px
   display: flex
   align-items: center
   justify-content: center
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3)
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25)
   cursor: pointer
-  transition: opacity 0.3s ease
   opacity: 0
+  pointer-events: none
   z-index: 1000
+  transform: scale(0.7) translateY(40px)
+  transition: opacity 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s, background 0.3s
 
-  &:hover
-    background-color: darken($cor-terciaria, 10%)
-
-  .fa-arrow-up
-    font-size: 24px
-    margin: 0
-    line-height: 0
-
+  // Animação de entrada
   &.visible
     opacity: 1
+    pointer-events: auto
+    transform: scale(1) translateY(0)
+    animation: bounceIn 0.8s
+
+  &:hover
+    background: linear-gradient(135deg, color.adjust($cor-terciaria, $lightness: -10%) 60%, #ffe066 100%)
+    box-shadow: 0 12px 32px rgba(0,0,0,0.35)
+    transform: scale(1.12) translateY(-8px)
+    .arrow-svg
+      stroke: #000
+      transform: translateY(-4px) scale(1.15)
+      transition: stroke 0.2s, transform 0.3s cubic-bezier(0.4,0,0.2,1)
+
+  .arrow-wrapper
+    display: flex
+    align-items: center
+    justify-content: center
+    animation: pulse 2.2s infinite
+
+  .arrow-svg
+    width: 32px
+    height: 32px
+    stroke: #222
+    transition: stroke 0.2s, transform 0.3s cubic-bezier(0.4,0,0.2,1)
+
+@keyframes bounceIn
+  0%
+    opacity: 0
+    transform: scale(0.5) translateY(80px)
+  60%
+    opacity: 1
+    transform: scale(1.1) translateY(-10px)
+  80%
+    transform: scale(0.95) translateY(4px)
+  100%
+    opacity: 1
+    transform: scale(1) translateY(0)
+
+@keyframes pulse
+  0%, 100%
+    transform: scale(1)
+  50%
+    transform: scale(1.12)
+
+@media (max-width: 700px)
+  .scroll-to-top
+    width: 44px
+    height: 44px
+    bottom: 18px
+    right: 18px
+    .arrow-svg
+      width: 22px
+      height: 22px

@@ -1,125 +1,188 @@
-@import 'variables'
-@import 'mixins'
+@use './variables' as *
+@use './mixins' as *
 
-// Estrutura principal
 .sobre
-  padding: 5% 15%
+  padding: 5% 4%
   display: flex
   flex-direction: row
   align-items: center
   justify-content: space-between
   flex-wrap: wrap
+  min-height: 70vh
+  background: linear-gradient(120deg, #181818 85%, $cor-terciaria 140%)
+  border-radius: 32px
+  box-shadow: 0 8px 36px rgba(0,0,0,0.18)
+  position: relative
+  overflow: hidden
+  max-width: 65%
+  margin-left: auto
+  margin-right: auto
   @include fadeIn
 
-// Conteúdo
 .sobre__conteudo
   width: 50%
   display: flex
   flex-direction: column
   align-items: flex-start
   gap: 1.5rem
+  position: relative
+  z-index: 2
   @include slideInLeft
 
-// Título da seção
 .sobre__titulo
-  font-size: 2.5rem
+  font-size: 2.6rem
   font-family: $fonte-primaria
   margin-bottom: 1rem
-  @include fadeIn
+  font-weight: 800
+  letter-spacing: 1.5px
+  text-shadow: 0 2px 18px rgba(255,221,72,0.18)
+  position: relative
+  z-index: 2
 
-// Texto da seção
+.sobre__titulo-brilho
+  display: inline-block
+  background: linear-gradient(90deg, $cor-terciaria 15%, #fffbe8 60%, $cor-terciaria 100%)
+  background-size: 200% auto
+  background-clip: text
+  -webkit-background-clip: text
+  color: transparent
+  -webkit-text-fill-color: transparent
+  animation: brilhoTituloSobre 2.8s linear infinite
+
+@keyframes brilhoTituloSobre
+  0%
+    background-position: 200% 0
+  100%
+    background-position: 0 0
+
 .sobre__texto
   font-size: 1.5rem
   font-family: $fonte-secundaria
   line-height: 1.6
   max-width: 800px
+  color: $cor-secundaria
+  background: rgba(0,0,0,0.08)
+  border-radius: 14px
+  padding: 1.2rem 1.1rem
+  box-shadow: 0 2px 12px rgba(255,221,72,0.08)
   @include slideInLeft
 
-// Texto destacado
 .texto-destaque
   color: $cor-terciaria
+  font-weight: 700
+  text-shadow: 0 1px 8px #fffbe8
 
-// Imagem de perfil
-.sobre__imagem
+.sobre__imagem-wrapper
   width: 40%
-  margin-top: -30% // Ajusta a margem superior para alinhar melhor a imagem
-  max-height: 800px
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  z-index: 1
+
+  // Brilho animado atrás da foto
+  &::before
+    content: ''
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    width: 110%
+    height: 110%
+    background: radial-gradient(circle, rgba(255,221,72,0.18) 0%, rgba(255,221,72,0.08) 60%, transparent 100%)
+    filter: blur(18px)
+    opacity: 0.85
+    pointer-events: none
+    z-index: 0
+    animation: brilhoFotoSobre 3.2s ease-in-out infinite alternate
+
+@keyframes brilhoFotoSobre
+  0%
+    opacity: 0.7
+    filter: blur(10px)
+    transform: translate(-50%, -50%) scale(1)
+  100%
+    opacity: 1
+    filter: blur(28px)
+    transform: translate(-50%, -50%) scale(1.08)
+
+.sobre__imagem
+  width: 100%
+  max-width: 380px
+  max-height: 420px
   object-fit: cover
   border-radius: 200px
+  border: 4px solid $cor-terciaria
+  box-shadow: 0 8px 32px 0 rgba(255,221,72,0.18), 0 2px 16px rgba(0,0,0,0.12)
+  position: relative
+  z-index: 1
+  transition: box-shadow 0.4s, transform 0.4s
   @include fadeIn
 
-// Media Queries
+  &:hover
+    box-shadow: 0 16px 48px 0 rgba(255,221,72,0.28), 0 4px 24px rgba(0,0,0,0.19)
+    transform: scale(1.03) rotate(-2deg)
+
 @media (max-width: 1400px)
   .sobre
-    padding: 5% 12%
-
+    padding: 0% 12%
   .sobre__conteudo
     width: 55%
-
   .sobre__titulo
     font-size: 2.3rem
-
   .sobre__texto
     font-size: 1.4rem
-
-  .sobre__imagem
+  .sobre__imagem-wrapper
     width: 45%
+  .sobre__imagem
+    width: 40%
 
 @media (max-width: 1200px)
   .sobre
-    padding: 5% 10%
+    padding: 0% 10%
     gap: 20px
-
   .sobre__conteudo
     width: 60%
-
   .sobre__titulo
     font-size: 2.2rem
-
   .sobre__texto
     font-size: 1.3rem
-
-  .sobre__imagem
+  .sobre__imagem-wrapper
     width: 35%
+  .sobre__imagem
+    width: 30%
 
 @media (max-width: 992px)
   .sobre
     padding: 5% 8%
-
   .sobre__conteudo
     width: 60%
-
   .sobre__titulo
     font-size: 2rem
-
   .sobre__texto
     font-size: 1.2rem
-
-  .sobre__imagem
+  .sobre__imagem-wrapper
     width: 35%
 
 @media (max-width: 768px)
+  .sobre__imagem
+    width: 100%
   .sobre
-    padding: 5% 5%
+    padding: 5% 10%
     flex-direction: column
     align-items: center
-
   .sobre__conteudo
     width: 100%
     text-align: center
     order: 2
     align-items: center
-
-
   .sobre__titulo
     font-size: 1.9rem
-
   .sobre__texto
     font-size: 1.3rem
     max-width: 90%
-
-  .sobre__imagem
-    width: 40%
+  .sobre__imagem-wrapper
+    width: 60%
     max-height: 300px
     margin-top: 0
     order: 1
@@ -127,10 +190,8 @@
 @media (max-width: 480px)
   .sobre__titulo
     font-size: 1.5rem
-
   .sobre__texto
     font-size: 1.0rem
-
-  .sobre__imagem
-    width: 40%
+  .sobre__imagem-wrapper
+    width: 80%
     max-height: 200px

@@ -1,17 +1,82 @@
-@import 'variables'
-@import 'mixins'
+@use './variables' as *
+@use './mixins' as *
 
-// Cabeçalho
 .cabecalho
-  padding: 2% 0% 0% 15%
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  padding: 0.2rem 8% 0.2rem 3% // Mais à esquerda!
   display: flex
   align-items: center
-  justify-content: space-between
-  @include fadeIn
+  justify-content: flex-start
+  min-height: 80px
+  background: rgba(24, 24, 24, 0.95)
+  border-radius: 0 0 32px 32px
+  box-shadow: 0 4px 32px rgba(255,221,72,0.08)
+  backdrop-filter: blur(12px)
+  z-index: 1000
+  @include fadeIn(0.8s)
+
+  &__glow
+    content: ''
+    position: absolute
+    left: 50%
+    bottom: -8px
+    transform: translateX(-50%)
+    width: 60%
+    height: 12px
+    background: radial-gradient(ellipse at center, rgba(255,221,72,0.3) 0%, transparent 80%)
+    filter: blur(4px)
+    animation: headerGlow 2.5s ease-in-out infinite alternate
+
+@keyframes headerGlow
+  0%
+    opacity: 0.6
+  100%
+    opacity: 1
+
+.cabecalho__branding
+  display: flex
+  align-items: center
+  gap: 0.7rem
+  margin-right: 2.5rem
+  z-index: 2
+
+.cabecalho__logo-link
+  display: flex
+  align-items: center
+  gap: 0.6rem
+  cursor: pointer
+  text-decoration: none
+  transition: opacity 0.25s
+
+  &:hover .cabecalho__brand-name
+    color: #fffbe8
+    text-shadow: 0 2px 12px #ffe066
+
+.cabecalho__logo
+  width: 42px
+  height: 42px
+  border-radius: 50%
+  background: #fff
+  box-shadow: 0 0 12px 2px #ffe066
+  object-fit: contain
+
+.cabecalho__brand-name
+  font-family: $fonte-primaria
+  font-size: 1.45rem
+  font-weight: 800
+  color: $cor-terciaria
+  letter-spacing: 1.1px
+  transition: color 0.3s, text-shadow 0.3s
 
 .cabecalho__menu
   display: flex
-  gap: 80px
+  align-items: center // Alinha verticalmente com o logo!
+  gap: 3rem
+  position: relative
+  z-index: 2
 
 .cabecalho__menu__link
   font-family: $fonte-secundaria
@@ -19,31 +84,87 @@
   font-weight: 600
   color: $cor-terciaria
   text-decoration: none
-  transition: color 0.3s ease, transform 0.3s ease
+  padding: 1rem 2rem
+  border-radius: 2rem
+  transition: all 0.3s cubic-bezier(0.4,0,0.2,1)
+  cursor: pointer
+  background: linear-gradient(90deg, rgba(255,221,72,0.05) 0%, transparent 100%)
 
-.cabecalho__menu__link:hover
-  color: $cor-secundaria
-  transform: scale(1.1)
+  &:hover
+    color: #222
+    background: linear-gradient(90deg, #fffbe8 0%, $cor-terciaria 100%)
+    box-shadow: 0 4px 24px rgba(255,221,72,0.2)
+    transform: translateY(-2px)
 
-@media (max-width: 768px)
+@media (max-width: 1200px)
   .cabecalho
-    margin-top: 1rem
-    padding: 2% 0% 0% 5%
+    padding: 0.6rem 2% 0.6rem 1%
+    border-radius: 0 0 20px 20px
+  .cabecalho__menu
+    gap: 1.2rem
+
+@media (max-width: 900px)
+  .cabecalho
     flex-direction: column
     align-items: center
     justify-content: center
+    padding: 0.6rem 2% 0.6rem 1%
+    border-radius: 0 0 20px 20px
+  .cabecalho__menu
+    gap: 1.2rem
+
+@media (max-width: 768px)
+  .cabecalho
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    padding: 0.5rem 1.5%
+    min-height: 64px
+    border-radius: 0 0 14px 14px
+
+  .cabecalho__branding
+    margin: 0 0 0.5rem 0
+    justify-content: center
 
   .cabecalho__menu
-    flex-direction: row
-    gap: 60px
-    align-items: center
+    gap: 0.6rem
+    justify-content: center
+    width: 100%
 
   .cabecalho__menu__link
     font-size: 1.5rem
+    padding: 0.7rem 1.1rem
 
-@media (max-width: 480px)
-  .cabecalho__menu__link
-    font-size: 1.1rem
+@media (max-width: 540px)
+  .cabecalho
+    padding: 0.3rem 0.2rem
+    min-height: 48px
+    border-radius: 0 0 8px 8px
 
   .cabecalho__menu
-    gap: 30px
+    gap: 0.2rem
+
+  .cabecalho__menu__link
+    font-size: 1.2rem
+    padding: 0.45rem 0.6rem
+
+@media (max-width: 400px)
+  .cabecalho
+    padding: 0.15rem 0.1rem
+    min-height: 36px
+    border-radius: 0 0 6px 6px
+
+  .cabecalho__menu
+    gap: 0.08rem
+
+  .cabecalho__menu__link
+    font-size: 1em
+    padding: 0.28rem 0.38rem
+
+  .cabecalho__branding
+    gap: 0.3rem
+  .cabecalho__brand-name
+    font-size: 0.88rem
+  .cabecalho__logo
+    width: 32px
+    height: 32px

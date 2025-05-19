@@ -1,53 +1,66 @@
 import React from 'react';
 import '../styles/Home.sass';
 import ScrollToTopButton from './ScrollToTopButton';
-
-// Usando o componente Image do Next.js
 import Image from 'next/image';
-
-import githubImg from '../assets/github.png';
-import instagramImg from '../assets/instagram.png';
-import youtubeImg from '../assets/youtube.png';
-import whatsappImg from '../assets/whatsapp.png';
-import linkedinImg from '../assets/linkedin.png';
-import profileImg1 from '../assets/portfolio_photo_1.png';
-import profileImg2 from '../assets/portfolio_photo_2.png';
 
 const Home: React.FC = () => {
   return (
     <main className="apresentacao">
       <section className="apresentacao__imagens">
-        {/* Alterado para o componente Image */}
-        <Image className="apresentacao__imagem" src={profileImg1} alt="Foto de Felipe" width={500} height={500} />
-        <Image className="apresentacao__imagem" src={profileImg2} alt="Foto de Felipe" width={500} height={500} />
+        <Image
+          className="apresentacao__imagem"
+          src="/portfolio_photo_1.png"
+          alt="Equipe LacrossTech"
+          width={500}
+          height={500}
+        />
+        <Image
+          className="apresentacao__imagem"
+          src="/portfolio_photo_2.png"
+          alt="Projetos LacrossTech"
+          width={500}
+          height={500}
+        />
+        <Image
+          className="apresentacao__imagem"
+          src="/portfolio_photo_3.jpg"
+          alt="Projetos LacrossTech"
+          width={500}
+          height={500}
+        />
       </section>
       <section className="apresentacao__conteudo">
         <h1 className="apresentacao__conteudo__titulo">
-          Eleve seu negócio digital a outro nível <strong className="titulo-destaque">com um Sistema Web de qualidade!</strong>
+          <span className="titulo-brilhante">Soluções digitais para transformar ideias em resultados.</span><br />
+          <strong className="titulo-destaque">LacrossTech</strong>
         </h1>
+
         <p className="apresentacao__conteudo__texto">
-          Olá! Sou Felipe Moreira, desenvolvedor Fullstack especializado. Ajudo pequenos negócios a colocarem em prática boas ideias. Vamos conversar?
+          <span style={{ color: "#FFDD48", fontWeight: 600 }}>
+            Fundada por Felipe Moreira (<b>Dev Lipelacross</b>)
+          </span>, a LacrossTech nasceu e está em ascensão, focada no desenvolvimento de sites, aplicações web e design gráfico sob medida para pequenas e médias empresas que querem se destacar no digital.<br /><br />
+          <strong>Pronto para tirar sua ideia do papel?</strong> Fale com a LacrossTech e veja como podemos elevar sua presença online a um novo patamar.
         </p>
         <div className="apresentacao__links">
-          <h2 className="apresentacao__links__subtitulo">Acesse minhas redes</h2>
-          <a className="apresentacao__links__navegacao" href="https://github.com/LipeLacross">
-            <Image src={githubImg} alt="GitHub" width={30} height={30} />
+          <h2 className="apresentacao__links__subtitulo">Conecte-se comigo</h2>
+          <a className="apresentacao__links__navegacao" href="https://github.com/LipeLacross" target="_blank" rel="noopener noreferrer">
+            <Image src="/github.svg" alt="GitHub" width={30} height={30} unoptimized />
             GitHub
           </a>
-          <a className="apresentacao__links__navegacao" href="https://www.instagram.com/lipelacross/">
-            <Image src={instagramImg} alt="Instagram" width={30} height={30} />
+          <a className="apresentacao__links__navegacao" href="https://www.instagram.com/lipelacross/" target="_blank" rel="noopener noreferrer">
+            <Image src="/instagram.svg" alt="Instagram" width={30} height={30} unoptimized />
             Instagram
           </a>
-          <a className="apresentacao__links__navegacao" href="https://www.youtube.com/@DevLipeLacross">
-            <Image src={youtubeImg} alt="YouTube" width={30} height={30} />
+          <a className="apresentacao__links__navegacao" href="https://www.youtube.com/@DevLipeLacross" target="_blank" rel="noopener noreferrer">
+            <Image src="/youtube.svg" alt="YouTube" width={30} height={30} unoptimized />
             YouTube
           </a>
-          <a className="apresentacao__links__navegacao" href="https://wa.me/74981256120">
-            <Image src={whatsappImg} alt="WhatsApp" width={30} height={30} />
+          <a className="apresentacao__links__navegacao" href="https://wa.me/74981256120" target="_blank" rel="noopener noreferrer">
+            <Image src="/whatsapp.svg" alt="WhatsApp" width={30} height={30} unoptimized />
             WhatsApp
           </a>
-          <a className="apresentacao__links__navegacao" href="https://www.linkedin.com/in/lipelacross-developer">
-            <Image src={linkedinImg} alt="LinkedIn" width={30} height={30} />
+          <a className="apresentacao__links__navegacao" href="https://www.linkedin.com/in/lipelacross-developer" target="_blank" rel="noopener noreferrer">
+            <Image src="/linkedin.svg" alt="LinkedIn" width={30} height={30} unoptimized />
             LinkedIn
           </a>
         </div>
