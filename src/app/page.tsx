@@ -6,6 +6,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
 import Services from "./components/Services";
 import BusinessPartner from "@/app/components/BusinessPartner";
 import Opening from "@/app/components/Opening";
+import { montserrat, kronaOne } from './fonts';
 
 export default function Page() {
   return (
