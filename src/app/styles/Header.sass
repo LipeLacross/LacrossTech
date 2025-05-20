@@ -5,48 +5,29 @@
   position: fixed
   top: 0
   left: 0
-  width: 100%
-  padding: 0.2rem 8% 0.2rem 3% // Mais à esquerda!
+  width: 100vw
+  box-sizing: border-box
+  padding: 0.2rem 2vw 0.2rem 2vw
   display: flex
   align-items: center
-  justify-content: flex-start
-  min-height: 80px
-  background: rgba(24, 24, 24, 0.95)
+  min-height: 72px
+  background: rgba(24, 24, 24, 0.97)
   border-radius: 0 0 32px 32px
   box-shadow: 0 4px 32px rgba(255,221,72,0.08)
   backdrop-filter: blur(12px)
   z-index: 1000
   @include fadeIn(0.8s)
 
-  &__glow
-    content: ''
-    position: absolute
-    left: 50%
-    bottom: -8px
-    transform: translateX(-50%)
-    width: 60%
-    height: 12px
-    background: radial-gradient(ellipse at center, rgba(255,221,72,0.3) 0%, transparent 80%)
-    filter: blur(4px)
-    animation: headerGlow 2.5s ease-in-out infinite alternate
-
-@keyframes headerGlow
-  0%
-    opacity: 0.6
-  100%
-    opacity: 1
-
 .cabecalho__branding
   display: flex
   align-items: center
-  gap: 0.7rem
-  margin-right: 2.5rem
+  gap: 0.6rem
   z-index: 2
 
 .cabecalho__logo-link
   display: flex
   align-items: center
-  gap: 0.6rem
+  gap: 0.5rem
   cursor: pointer
   text-decoration: none
   transition: opacity 0.25s
@@ -56,8 +37,8 @@
     text-shadow: 0 2px 12px #ffe066
 
 .cabecalho__logo
-  width: 42px
-  height: 42px
+  width: 38px
+  height: 38px
   border-radius: 50%
   background: #fff
   box-shadow: 0 0 12px 2px #ffe066
@@ -65,7 +46,7 @@
 
 .cabecalho__brand-name
   font-family: $fonte-primaria
-  font-size: 1.45rem
+  font-size: 1.15rem
   font-weight: 800
   color: $cor-terciaria
   letter-spacing: 1.1px
@@ -73,22 +54,24 @@
 
 .cabecalho__menu
   display: flex
-  align-items: center // Alinha verticalmente com o logo!
-  gap: 3rem
-  position: relative
-  z-index: 2
+  align-items: center
+  gap: 2.6rem
+  margin-left: 2.5vw
+  flex: 1
+  min-width: 0
 
 .cabecalho__menu__link
   font-family: $fonte-secundaria
   font-size: 1.5rem
-  font-weight: 600
+  font-weight: 700
   color: $cor-terciaria
   text-decoration: none
-  padding: 1rem 2rem
+  padding: 1rem 2.2rem
   border-radius: 2rem
   transition: all 0.3s cubic-bezier(0.4,0,0.2,1)
   cursor: pointer
   background: linear-gradient(90deg, rgba(255,221,72,0.05) 0%, transparent 100%)
+  white-space: nowrap
 
   &:hover
     color: #222
@@ -96,75 +79,122 @@
     box-shadow: 0 4px 24px rgba(255,221,72,0.2)
     transform: translateY(-2px)
 
-@media (max-width: 1200px)
-  .cabecalho
-    padding: 0.6rem 2% 0.6rem 1%
-    border-radius: 0 0 20px 20px
-  .cabecalho__menu
-    gap: 1.2rem
+  &--main
+    font-size: 1.6rem
+    font-weight: 900
 
-@media (max-width: 900px)
-  .cabecalho
+.cabecalho__menu-toggle
+  display: block
+  background: none
+  border: none
+  color: $cor-terciaria
+  cursor: pointer
+  z-index: 1010
+  margin-left: auto
+  font-size: 2.3rem
+
+// Drawer/hamburguer menu
+.cabecalho__menu-drawer
+  display: none
+
+  &.open
+    display: flex
     flex-direction: column
-    align-items: center
-    justify-content: center
-    padding: 0.6rem 2% 0.6rem 1%
-    border-radius: 0 0 20px 20px
-  .cabecalho__menu
-    gap: 1.2rem
+    align-items: flex-end
+    position: fixed
+    top: 0
+    right: 0
+    width: 340px
+    max-width: 100vw
+    height: 100vh
+    background: rgba(24, 24, 24, 0.99)
+    border-radius: 0 0 18px 18px
+    box-shadow: 0 8px 32px rgba(255,221,72,0.13)
+    padding: 2.2rem 1.2rem 1.2rem 1.2rem
+    z-index: 2000
+    animation: fadeIn 0.3s
+    overflow-y: auto
 
-@media (max-width: 768px)
-  .cabecalho
+  &__links
+    display: flex
     flex-direction: column
-    align-items: center
-    justify-content: center
-    padding: 0.5rem 1.5%
-    min-height: 64px
-    border-radius: 0 0 14px 14px
-
-  .cabecalho__branding
-    margin: 0 0 0.5rem 0
-    justify-content: center
-
-  .cabecalho__menu
-    gap: 0.6rem
-    justify-content: center
+    gap: 0.1rem
     width: 100%
 
   .cabecalho__menu__link
-    font-size: 1.5rem
+    font-size: 1.15rem
+    padding: 0.7rem 1.2rem
+    width: 100%
+    border-radius: 10px
+    text-align: left
+
+// Esconde menu horizontal em mobile
+@media (max-width: 900px)
+  .cabecalho__menu
+    display: none
+
+  .cabecalho__menu-drawer
+    display: none
+
+  .cabecalho__menu-drawer.open
+    display: flex
+    align-items: flex-start
+    left: 0
+    right: 0
+    width: 100vw
+    max-width: 100vw
+    border-radius: 0
+
+// Ajustes para telas médias e pequenas
+@media (max-width: 1200px)
+  .cabecalho__menu
+    gap: 1.2rem
+
+  .cabecalho__menu__link
+    font-size: 1.1rem
     padding: 0.7rem 1.1rem
 
 @media (max-width: 540px)
   .cabecalho
-    padding: 0.3rem 0.2rem
-    min-height: 48px
+    padding: 0.15rem 0.2rem
+    min-height: 40px
     border-radius: 0 0 8px 8px
 
-  .cabecalho__menu
+  .cabecalho__branding
     gap: 0.2rem
 
+  .cabecalho__brand-name
+    font-size: 0.9rem
+
+  .cabecalho__logo
+    width: 28px
+    height: 28px
+
+  .cabecalho__menu-drawer.open
+    max-width: 100vw
+    padding: 1.2rem 0.2rem
+
   .cabecalho__menu__link
-    font-size: 1.2rem
-    padding: 0.45rem 0.6rem
+    font-size: 1rem
+    padding: 0.4rem 0.7rem
 
 @media (max-width: 400px)
   .cabecalho
-    padding: 0.15rem 0.1rem
-    min-height: 36px
+    padding: 0.08rem 0.1rem
+    min-height: 32px
     border-radius: 0 0 6px 6px
 
-  .cabecalho__menu
-    gap: 0.08rem
+  .cabecalho__menu-drawer.open
+    gap: 0.04rem
 
   .cabecalho__menu__link
-    font-size: 1em
-    padding: 0.28rem 0.38rem
+    font-size: 0.89em
+    padding: 0.23rem 0.28rem
 
   .cabecalho__branding
-    gap: 0.3rem
+    gap: 0.13rem
   .cabecalho__brand-name
-    font-size: 0.88rem
+    font-size: 0.75rem
   .cabecalho__logo
-    width: 32px
-    height: 32px
+    width: 22px
+    height: 22px

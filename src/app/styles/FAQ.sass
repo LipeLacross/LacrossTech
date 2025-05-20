@@ -1,0 +1,75 @@
+@use './variables' as *
+@use './mixins' as *
+
+.faq-section
+  padding: 5% 10%
+  background: linear-gradient(120deg, #191919 80%, $cor-terciaria 140%)
+  border-radius: 24px
+  margin: 3rem auto
+  max-width: 800px
+  box-shadow: 0 6px 32px rgba(0,0,0,0.22)
+  @include fadeIn(1s)
+
+.faq-title
+  color: $cor-terciaria
+  font-family: $fonte-primaria
+  font-size: 2rem
+  text-align: center
+  margin-bottom: 2rem
+  @include swing(1.2s)
+
+.faq-list
+  display: flex
+  flex-direction: column
+  gap: 1.2rem
+
+.faq-item
+  background: #111
+  border-radius: 18px
+  box-shadow: 0 4px 18px rgba(255,221,72,0.10)
+  overflow: hidden
+  transition: box-shadow 0.4s
+  &.open
+    box-shadow: 0 8px 32px 0 rgba(255,221,72,0.26)
+    .faq-question
+      color: $cor-terciaria
+
+.faq-question
+  width: 100%
+  background: none
+  border: none
+  color: $cor-secundaria
+  font-family: $fonte-secundaria
+  font-size: 1.18rem
+  font-weight: 700
+  padding: 1.2rem 1.4rem
+  text-align: left
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: space-between
+  transition: color 0.3s
+  @include slideDown(0.7s)
+
+.faq-arrow
+  margin-left: 1rem
+  transition: transform 0.3s
+  &.open
+    transform: rotate(180deg)
+
+.faq-answer-wrapper
+  max-height: 0
+  overflow: hidden
+  transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1)
+  background: #191919
+
+.faq-item.open .faq-answer-wrapper
+  max-height: 200px
+  transition: max-height 0.6s cubic-bezier(0.4,0,0.2,1)
+
+.faq-answer
+  padding: 1.1rem 1.7rem
+  color: $cor-secundaria
+  font-size: 1.07rem
+  font-family: $fonte-secundaria
+  @include fadeIn(0.8s)

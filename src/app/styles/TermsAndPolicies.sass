@@ -1,0 +1,62 @@
+@use './variables' as *
+@use './mixins' as *
+
+.terms-policies-section
+  padding: 5% 10%
+  max-width: 800px
+  margin: 3rem auto
+  background: linear-gradient(120deg, #191919 80%, $cor-terciaria 140%)
+  border-radius: 24px
+  box-shadow: 0 6px 32px rgba(0,0,0,0.22)
+  color: $cor-secundaria
+  font-family: $fonte-secundaria
+  @include fadeIn(1s)
+
+.terms-policies-title
+  font-family: $fonte-primaria
+  font-size: 2.6rem
+  color: $cor-terciaria
+  text-align: center
+  margin-bottom: 3rem
+  @include swing(1.2s)
+
+.policy-block
+  margin-bottom: 2.5rem
+  padding: 1.5rem 2rem
+  background: #111
+  border-radius: 18px
+  box-shadow: 0 4px 18px rgba(255,221,72,0.10)
+  transition: box-shadow 0.3s ease, transform 0.3s ease
+
+  h3
+    font-size: 1.8rem
+    color: $cor-terciaria
+    margin-bottom: 1rem
+    font-weight: 700
+    @include slideDown(1s)
+
+  p
+    font-size: 1.15rem
+    line-height: 1.7
+    opacity: 0.9
+
+  &:hover
+    box-shadow: 0 8px 32px rgba(255,221,72,0.26)
+    transform: translateY(-4px)
+
+@media (max-width: 700px)
+  .terms-policies-section
+    padding: 5% 5%
+    max-width: 95vw
+
+  .terms-policies-title
+    font-size: 2rem
+
+  .policy-block
+    padding: 1rem 1.2rem
+
+    h3
+      font-size: 1.4rem
+
+    p
+      font-size: 1rem

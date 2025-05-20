@@ -1,0 +1,87 @@
+@use './variables' as *
+@use './mixins' as *
+
+.contact-form-section
+  padding: 5% 10%
+  background: linear-gradient(120deg, #191919 80%, $cor-terciaria 140%)
+  border-radius: 24px
+  margin: 3rem auto
+  max-width: 600px
+  box-shadow: 0 6px 32px rgba(0,0,0,0.22)
+  @include fadeIn(1s)
+
+.contact-form-title
+  color: $cor-terciaria
+  font-family: $fonte-primaria
+  font-size: 2rem
+  text-align: center
+  margin-bottom: 2rem
+  @include swing(1.2s)
+
+.contact-form
+  display: flex
+  flex-direction: column
+  gap: 1.3rem
+
+  label
+    color: $cor-terciaria
+    font-family: $fonte-secundaria
+    font-weight: 600
+    font-size: 1.1rem
+
+  input, textarea
+    background: #111
+    border: 2px solid $cor-terciaria
+    border-radius: 14px
+    padding: 0.9rem 1rem
+    color: $cor-secundaria
+    font-family: $fonte-secundaria
+    font-size: 1rem
+    transition: border-color 0.3s ease
+    resize: vertical
+
+    &:focus
+      border-color: #fffbe8
+      outline: none
+      box-shadow: 0 0 12px 3px $cor-terciaria
+
+  button
+    background: $cor-terciaria
+    color: #222
+    font-family: $fonte-primaria
+    font-weight: 700
+    font-size: 1.3rem
+    padding: 0.85rem 0
+    border: none
+    border-radius: 20px
+    cursor: pointer
+    box-shadow: 0 6px 24px rgba(255,221,72,0.3)
+    transition: background 0.3s ease, transform 0.3s ease
+
+    &:hover:not(:disabled)
+      background: #fffbe8
+      transform: scale(1.05)
+      box-shadow: 0 8px 32px rgba(255,221,72,0.5)
+
+    &:disabled
+      cursor: not-allowed
+      opacity: 0.7
+
+  .success-message
+    color: #a8ff9e
+    font-weight: 600
+    font-size: 1rem
+    text-align: center
+    margin-top: 0.5rem
+
+  .error-message
+    color: #ff6b6b
+    font-weight: 600
+    font-size: 1rem
+    text-align: center
+    margin-top: 0.5rem
+
+@media (max-width: 700px)
+  .contact-form-section
+    padding: 5% 5%
+    max-width: 90vw

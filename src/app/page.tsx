@@ -6,6 +6,11 @@ import ScrollToTopButton from "./components/ScrollToTopButton";
 import Services from "./components/Services";
 import BusinessPartner from "@/app/components/BusinessPartner";
 import Opening from "@/app/components/Opening";
+import Diferenciais from "@/app/components/Diferenciais";
+import FAQ from "@/app/components/FAQ";
+import ContactForm from "@/app/components/ContactForm";
+import PaymentsContracts from "@/app/components/PaymentsContracts";
+import TermsAndPolicies from "@/app/components/TermsAndPolicies";
 
 export default function Page() {
   return (
@@ -13,18 +18,52 @@ export default function Page() {
       {/* <MaintenanceOverlay /> */}
       <Opening />
       <Header />
-      <section id="home">
+
+      {/* Apresentação / Home */}
+      <section id="apresentacao">
         <Home />
       </section>
-      <section id="servicos">
+
+      {/* Diferenciais */}
+      <section id="diferenciais">
+        <Diferenciais />
+      </section>
+
+      {/* Serviços */}
+      <section id="service-table-container">
         <Services />
       </section>
+
+      {/* Pagamentos e Contratos */}
+      <section id="pagamentos">
+        <PaymentsContracts />
+      </section>
+
+      {/* Sobre */}
       <section id="sobre">
         <About />
       </section>
-      <section id="parceiros">
+
+      {/* FAQ */}
+      <section id="faq">
+        <FAQ />
+      </section>
+
+      {/* Contato */}
+      <section id="contact">
+        <ContactForm />
+      </section>
+
+      {/* Termos e Políticas */}
+      <section id="termos">
+        <TermsAndPolicies />
+      </section>
+
+      {/* Parceiros */}
+      <section id="partner-highlight-section">
         <BusinessPartner />
       </section>
+
       <ScrollToTopButton />
       <Footer />
     </div>

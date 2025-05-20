@@ -1,0 +1,63 @@
+@use './variables' as *
+@use './mixins' as *
+
+.diferenciais-section
+  padding: 5% 10%
+  background: linear-gradient(120deg, #191919 80%, $cor-terciaria 140%)
+  border-radius: 24px
+  margin: 3rem auto
+  max-width: 800px
+  box-shadow: 0 6px 32px rgba(0,0,0,0.22)
+  @include fadeIn(1s)
+
+.diferenciais-title
+  color: $cor-terciaria
+  font-family: $fonte-primaria
+  font-size: 2rem
+  text-align: center
+  margin-bottom: 2rem
+  @include swing(1.2s)
+
+.diferenciais-list
+  display: flex
+  flex-wrap: wrap
+  gap: 2rem
+  justify-content: center
+
+.diferencial-card
+  background: #111
+  border-radius: 18px
+  padding: 1.5rem 1.2rem
+  min-width: 200px
+  max-width: 280px
+  display: flex
+  align-items: flex-start
+  gap: 1.2rem
+  box-shadow: 0 4px 18px rgba(255,221,72,0.10)
+  transition: transform 0.35s, box-shadow 0.3s
+  @include fadeIn(1s)
+  &:hover
+    transform: scale(1.06) translateY(-4px)
+    box-shadow: 0 8px 32px 0 rgba(255,221,72,0.26)
+    .diferencial-icon
+      animation: pulse 0.9s
+
+.diferencial-icon
+  font-size: 2.2rem
+  color: $cor-terciaria
+  margin-right: 0.7rem
+
+.diferencial-content
+  display: flex
+  flex-direction: column
+  gap: 0.3rem
+
+.diferencial-title
+  color: $cor-terciaria
+  font-weight: 700
+  font-size: 1.18rem
+
+.diferencial-desc
+  color: $cor-secundaria
+  font-size: 1.05rem
+  opacity: 0.93

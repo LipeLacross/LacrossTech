@@ -1,0 +1,82 @@
+@use './variables' as *
+@use './mixins' as *
+
+.payments-contracts-section
+  padding: 5% 10%
+  background: linear-gradient(120deg, #191919 80%, $cor-terciaria 140%)
+  border-radius: 24px
+  margin: 3rem auto
+  max-width: 700px
+  box-shadow: 0 6px 32px rgba(0,0,0,0.22)
+  @include fadeIn(1s)
+
+.payments-contracts-title
+  color: $cor-terciaria
+  font-family: $fonte-primaria
+  font-size: 2.4rem
+  text-align: center
+  margin-bottom: 2.5rem
+  @include swing(1.2s)
+
+.payments-contracts-content
+  background: #111
+  border-radius: 18px
+  padding: 2.5rem 3rem
+  box-shadow: 0 4px 18px rgba(255,221,72,0.10)
+  color: $cor-secundaria
+  font-family: $fonte-secundaria
+  font-size: 1.15rem
+  line-height: 1.7
+  text-align: center
+  @include fadeIn(1s)
+
+  .payments-info-block
+    display: flex
+    align-items: flex-start
+    gap: 1.2rem
+    margin-bottom: 2.2rem
+
+    .icon
+      font-size: 2.2rem
+      color: $cor-terciaria
+      flex-shrink: 0
+      margin-top: 0.15em
+
+    // ANIMAÇÃO DE MOVIMENTO PARA CIMA E BAIXO
+    .animated-icon
+      animation: floatUpDown 1.8s ease-in-out infinite
+
+    .info-text
+      text-align: left
+
+      h3
+        color: $cor-terciaria
+        font-weight: 700
+        font-size: 1.25rem
+        margin-bottom: 0.4rem
+        @include slideDown(1s)
+
+      p
+        margin-bottom: 0
+        opacity: 0.92
+        font-size: 1.08rem
+
+@keyframes floatUpDown
+  0%, 100%
+    transform: translateY(0)
+  50%
+    transform: translateY(-4px)
+
+@media (max-width: 700px)
+  .payments-contracts-section
+    padding: 5% 5%
+    max-width: 95vw
+  .payments-contracts-content
+    padding: 2rem 1.5rem
+    font-size: 1rem
+    .payments-info-block
+      flex-direction: column
+      align-items: center
+      gap: 0.6rem
+      .info-text
+        text-align: center
