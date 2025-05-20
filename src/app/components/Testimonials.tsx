@@ -38,7 +38,7 @@ const Testimonials: React.FC = () => {
         <button className="carousel-btn prev" onClick={prev} aria-label="Anterior">&lt;</button>
         <div className="testimonial-card animated" key={index}>
           <Image src={testimonials[index].avatar} alt={testimonials[index].name} width={70} height={70} className="testimonial-avatar" />
-          <p className="testimonial-text">"{testimonials[index].text}"</p>
+          <p className="testimonial-text">&ldquo;{testimonials[index].text}&rdquo;</p>
           <span className="testimonial-name">{testimonials[index].name}</span>
           <span className="testimonial-role">{testimonials[index].role}</span>
         </div>
