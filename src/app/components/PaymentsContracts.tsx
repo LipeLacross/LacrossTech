@@ -4,8 +4,6 @@ import React from "react";
 import { FaRegHandshake, FaFileContract, FaPix, FaCreditCard } from "react-icons/fa6";
 import "../styles/PaymentsContracts.sass";
 
-const paymentLink = "https://pagamento.seubanco.com/link-exemplo"; // Substitua pelo link real
-
 const PaymentsContracts: React.FC = () => {
   return (
     <section className="payments-contracts-section" aria-labelledby="payments-contracts-title">
