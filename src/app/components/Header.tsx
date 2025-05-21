@@ -99,6 +99,15 @@ const Header: React.FC = () => {
       {/* Drawer: extras no desktop, tudo no mobile */}
       {menuOpen && (
         <nav className="cabecalho__menu-drawer open">
+              {/* Close 'X' inside the drawer */}
+          <button
+            className="cabecalho__menu-drawer__close"
+            aria-label="Fechar menu"
+            onClick={() => setMenuOpen(false)}
+            tabIndex={0}
+          >
+            <FiX size={32} />
+          </button>
           <div className="cabecalho__menu-drawer__links">
             {(isMobile ? [...MAIN_LINKS, ...MENU_LINKS] : MENU_LINKS).map((link) => (
               <ScrollLink
