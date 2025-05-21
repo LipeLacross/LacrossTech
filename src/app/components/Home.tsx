@@ -38,9 +38,11 @@ const Home: React.FC = () => {
         <p className="apresentacao__conteudo__texto">
           <span style={{ color: "#FFDD48", fontWeight: 600 }}>
             Fundada por Felipe Moreira (<b>Dev Lipelacross</b>)
-          </span>, a LacrossTech nasceu e está em ascensão, focada no desenvolvimento de sites, aplicações web e design gráfico sob medida para pequenas e médias empresas que querem se destacar no digital.<br /><br />
-          <strong>Pronto para tirar sua ideia do papel?</strong> Fale com a LacrossTech e veja como podemos elevar sua presença online a um novo patamar.
+          </span>, a LacrossTech nasceu para impulsionar <strong>pequenas e médias empresas</strong> que querem se destacar de verdade no digital.<br /><br />
+          Desenvolvemos sites, aplicações web e design gráfico sob medida, ajudando negócios a expandir sua presença online<br /><br />
+          <strong>Pronto para tirar sua ideia do papel?</strong> Fale com a LacrossTech e veja como podemos elevar sua marca no digital.
         </p>
+
         <div className="apresentacao__links">
           <h2 className="apresentacao__links__subtitulo">Conecte-se comigo</h2>
           <a className="apresentacao__links__navegacao" href="https://github.com/LipeLacross" target="_blank" rel="noopener noreferrer">

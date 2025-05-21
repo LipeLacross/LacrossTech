@@ -51,14 +51,12 @@ const TermsAndPolicies: React.FC = () => {
           Após a entrega do produto final, oferecemos garantia de 30 dias para correção de eventuais falhas ou bugs identificados, sem custos adicionais ao cliente.
         </p>
       </article>
-
-      <article className="policy-block">
-        <h3>Legislação e Foro</h3>
+        <article className="policy-block">
+        <h3>Limitação de Responsabilidade</h3>
         <p>
-          Estes termos são regidos pelas leis brasileiras. Eventuais disputas serão solucionadas nos tribunais competentes do local da sede da LacrossTech, conforme previsto em contrato.
+        Não nos responsabilizamos por danos diretos ou indiretos decorrentes do uso inadequado dos produtos ou serviços fornecidos, incluindo, mas não se limitando a, perda de dados, lucros cessantes ou interrupção de negócios.
         </p>
-      </article>
-
+    </article>
       <article className="policy-block">
         <h3>Atualizações dos Termos</h3>
         <p>

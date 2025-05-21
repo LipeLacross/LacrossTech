@@ -1,8 +1,10 @@
 "use client";
 
 import React from "react";
-import { FaRegHandshake, FaFileContract, FaPix } from "react-icons/fa6";
+import { FaRegHandshake, FaFileContract, FaPix, FaCreditCard } from "react-icons/fa6";
 import "../styles/PaymentsContracts.sass";
+
+const paymentLink = "https://pagamento.seubanco.com/link-exemplo"; // Substitua pelo link real
 
 const PaymentsContracts: React.FC = () => {
   return (
@@ -34,8 +36,20 @@ const PaymentsContracts: React.FC = () => {
           <div className="info-text">
             <h3>Pagamento via PIX</h3>
             <p>
-              Pagamento rápido, seguro e prático. Aceitamos exclusivamente PIX para sua comodidade.
+              Pagamento rápido, seguro e prático. Aceitamos PIX para sua comodidade.
             </p>
+          </div>
+        </div>
+        <div className="payments-info-block">
+          <span className="icon animated-icon"><FaCreditCard /></span>
+          <div className="info-text">
+            <h3>Pagamento via Cartão de Crédito</h3>
+            <p>
+              Pague com cartão de crédito usando um link seguro do banco parceiro. Parcelamento disponível.
+            </p>
+            <span className="payment-taxes-warning">
+              <strong>Atenção:</strong> As taxas de cartão, conforme o banco emissor, são repassadas ao cliente.
+            </span>
           </div>
         </div>
       </div>

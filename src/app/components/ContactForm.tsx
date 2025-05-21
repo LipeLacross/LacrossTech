@@ -17,7 +17,7 @@ const ContactForm: React.FC = () => {
     emailjs
       .sendForm(
         "service_60si7y9",       // substitua pelo seu Service ID do EmailJS
-        "template_el6zake",      // substitua pelo seu Template ID do EmailJS
+        "template_2q2d36q",      // substitua pelo seu Template ID do EmailJS
         form.current,
         "Ai_tl6w2eT1iWXjcO"        // substitua pelo seu Public Key do EmailJS
       )
