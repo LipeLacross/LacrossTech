@@ -32,6 +32,8 @@ O projeto foi desenvolvido em **Next.js** com **TypeScript** e **Sass**, focando
 
 ![chrome-capture-2025-5-21 (1)](https://github.com/user-attachments/assets/f4365337-68e1-4717-9715-01e2904e95c9)
 
+## ✔️ Técnicas e Tecnologias Utilizadas
+
 - **Next.js** (App Router)
 - **TypeScript**
 - **Sass (SCSS)** com variáveis e mixins customizados
