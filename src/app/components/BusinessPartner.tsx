@@ -49,14 +49,16 @@ const BusinessPartner: React.FC = () => {
                 <span style={{ color: "#FFDD48", fontWeight: 700 }}>Fale comigo e descubra os benefícios especiais.</span>
               </>
             ) : (
-              <>
-                <strong>SmartSYS – O Futuro da Automação Comercial no Agreste</strong>
-                <br /><br />
-                Sente que sua empresa poderia ser mais eficiente, mas falta tempo ou ferramentas para avançar? A SmartSYS nasceu para ajudar negócios como o seu, em Caruaru e toda a região agreste, a crescerem com tecnologia de verdade.
-                <strong> Simplifique. Automatize. Cresça.</strong> Com o sistema iSoft, você controla estoque, vendas, finanças e notas fiscais em uma única plataforma intuitiva e rápida.
-                <br /><br />
-                <strong>Oferta exclusiva:</strong> Solicite agora uma demonstração gratuita e descubra condições especiais para sua empresa. <span style={{ color: "#FFDD48", fontWeight: 700 }}>Fale comigo antes de fechar com a SmartSys!</span> Entre em contato pelas minhas redes sociais ou WhatsApp e eu faço sua indicação para garantir benefícios exclusivos.
-              </>
+<>
+  <strong>SmartSYS – Automação Comercial para sua empresa crescer</strong>
+  <br /><br />
+  Torne sua gestão mais eficiente: controle estoque, vendas, finanças e notas fiscais em uma plataforma fácil e rápida.
+  <br /><br />
+
+
+  <strong>Condições especiais:<span style={{ color: "#FFDD48", fontWeight: 700 }}> Fale comigo antes de fechar com a SmartSys e garanta benefícios exclusivos para seu negócio.</span></strong>
+</>
+
             )}
           </span>
           <a
