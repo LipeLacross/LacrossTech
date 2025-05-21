@@ -25,6 +25,7 @@
   @include slideDown(1.2s)
   text-shadow: 0 2px 18px rgba(255,221,72,0.22), 0 1px 0 #fffbe8
 
+// TABELA PADRÃO (DESKTOP)
 .service-table
   width: 100%
   min-width: 600px
@@ -92,6 +93,63 @@
     filter: blur(14px)
     transform: translate(-50%, -50%) scale(1.1)
 
+// CARTÕES PARA MOBILE
+.service-cards-list
+  display: none
+
+.service-card
+  display: none
+
+// RESPONSIVO
+@media (max-width: 700px)
+  .service-table
+    display: none
+
+  .service-cards-list
+    display: flex
+    flex-direction: column
+    gap: 1.5rem
+    margin-top: 1.5rem
+
+  .service-card
+    display: flex
+    background: #151515
+    border-radius: 16px
+    box-shadow: 0 4px 18px rgba(255,221,72,0.10)
+    padding: 1.3rem 1.1rem
+    align-items: flex-start
+    gap: 1.2rem
+    font-family: $fonte-secundaria
+    color: $cor-secundaria
+    animation: fadeIn 0.8s
+
+    .service-card-icon
+      font-size: 2.1rem
+      color: $cor-terciaria
+      margin-right: 0.8rem
+      flex-shrink: 0
+
+    .service-card-content
+      display: flex
+      flex-direction: column
+      gap: 0.4rem
+
+      .service-card-title
+        font-size: 1.12rem
+        font-family: $fonte-primaria
+        font-weight: 700
+        color: $cor-terciaria
+        margin-bottom: 0.2rem
+
+      .service-card-detail
+        font-size: 0.98rem
+        color: $cor-secundaria
+        opacity: 0.93
+        b
+          color: $cor-terciaria
+          font-weight: 600
+
+// AJUSTES PARA TABLET E MOBILE
 @media (max-width: 1100px)
   .service-table-container
     max-width: 98%

@@ -1,6 +1,8 @@
-import React from 'react';
-import { FaCode, FaDatabase, FaPaintBrush, FaTools, FaSyncAlt } from 'react-icons/fa';
-import '../styles/Services.sass';
+"use client";
+
+import React, { useEffect, useState } from "react";
+import { FaCode, FaDatabase, FaPaintBrush, FaTools, FaSyncAlt } from "react-icons/fa";
+import "../styles/Services.sass";
 
 const services = [
   {
@@ -61,35 +63,64 @@ const services = [
   },
 ];
 
+const MOBILE_BREAKPOINT = 700;
 
-const Services: React.FC = () => (
-  <div className="service-table-container">
-    <h2 className="service-table-title">Tabela de Serviços</h2>
-    <table className="service-table animated-table">
-      <thead>
-        <tr>
-          <th></th>
-          <th>Serviço</th>
-          <th>Custo Único</th>
-          <th>Custo Anual</th>
-          <th>Custo Mensal</th>
-          <th>Detalhes</th>
-        </tr>
-      </thead>
-      <tbody>
-        {services.map((service, idx) => (
-          <tr key={idx} className="service-row">
-            <td>{service.icon}</td>
-            <td>{service.name}</td>
-            <td>{service.initial}</td>
-            <td>{service.annual}</td>
-            <td>{service.monthly}</td>
-            <td>{service.details}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
-);
+const Services: React.FC = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < MOBILE_BREAKPOINT);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  return (
+    <div className="service-table-container">
+      <h2 className="service-table-title">Tabela de Serviços</h2>
+      {isMobile ? (
+        <div className="service-cards-list">
+          {services.map((service, idx) => (
+            <div className="service-card" key={idx}>
+              <div className="service-card-icon">{service.icon}</div>
+              <div className="service-card-content">
+                <div className="service-card-title">{service.name}</div>
+                <div className="service-card-detail"><b>Custo Único:</b> {service.initial}</div>
+                <div className="service-card-detail"><b>Custo Anual:</b> {service.annual}</div>
+                <div className="service-card-detail"><b>Custo Mensal:</b> {service.monthly}</div>
+                <div className="service-card-detail"><b>Detalhes:</b> {service.details}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <table className="service-table animated-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>Serviço</th>
+              <th>Custo Único</th>
+              <th>Custo Anual</th>
+              <th>Custo Mensal</th>
+              <th>Detalhes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {services.map((service, idx) => (
+              <tr key={idx} className="service-row">
+                <td>{service.icon}</td>
+                <td>{service.name}</td>
+                <td>{service.initial}</td>
+                <td>{service.annual}</td>
+                <td>{service.monthly}</td>
+                <td>{service.details}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
+    </div>
+  );
+};
 
 export default Services;
