@@ -49,7 +49,7 @@ const services = [
     icon: <FaSyncAlt color="#FFDD48" size={28} />,
     name: 'Manutenção Mensal para Sites',
     initial: '-',
-    annual: 'R$ 600,00 – R$ 1.200,00',
+    annual: '-',
     monthly: 'R$ 50,00 – R$ 100,00',
     details: 'Renovação de domínio, hospedagem, e-mail e SSL. Inclui suporte técnico básico.',
   },
