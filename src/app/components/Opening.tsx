@@ -48,69 +48,73 @@ const AnimatedProgressBar: React.FC<{ progress: number }> = ({ progress }) => (
   </div>
 );
 
-const AnimatedIconsCircle: React.FC = () => (
-  <div className="icons-circle">
-    {ICONS.map((item, idx) => (
-      <span
-        className="icon-item"
-        key={item.key}
-        style={
-          {
-            "--i": idx,
-            "--total": ICONS.length,
-          } as React.CSSProperties
-        }
-      >
-        {item.icon}
-      </span>
-    ))}
-    <style jsx>{`
-      .icons-circle {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 180px;
-        height: 180px;
-        pointer-events: none;
-        z-index: 2;
-      }
-      .icon-item {
-        position: absolute;
-        left: 35%;
-        top: 40%;
-        transform: rotate(calc(360deg / var(--total) * var(--i)))
-          translate(80px)
-          rotate(calc(-360deg / var(--total) * var(--i)));
-        animation: iconOrbit 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-        animation-delay: calc(var(--i) * 0.14s);
-        filter: drop-shadow(0 0 10px #ffdd48);
-      }
-      @keyframes iconOrbit {
-        0% {
-          filter: brightness(0.95) drop-shadow(0 0 8px #000000);
-        }
-        50% {
-          filter: brightness(1.25) drop-shadow(0 0 18px #fffbe8);
-        }
-        100% {
-          filter: brightness(0.95) drop-shadow(0 0 8px #FFDD48);
-        }
-      }
-      @media (max-width: 600px) {
+const AnimatedIconsCircle: React.FC = () => {
+  const ICON_SIZE = 36;
+  const CIRCLE_SIZE = 180;
+  const RADIUS = 80; // distância do centro
+  const CENTER = CIRCLE_SIZE / 2;
+  const total = ICONS.length;
+
+  return (
+    <div className="icons-circle">
+      {ICONS.map((item, idx) => {
+        const angle = (2 * Math.PI * idx) / total - Math.PI / 2;
+        // -Math.PI/2 para começar do topo
+        const x = CENTER + RADIUS * Math.cos(angle) - ICON_SIZE / 2;
+        const y = CENTER + RADIUS * Math.sin(angle) - ICON_SIZE / 2;
+        return (
+          <span
+            className="icon-item"
+            key={item.key}
+            style={{
+              left: x,
+              top: y,
+              width: ICON_SIZE,
+              height: ICON_SIZE,
+            }}
+          >
+            {item.icon}
+          </span>
+        );
+      })}
+      <style jsx>{`
         .icons-circle {
-          width: 110px;
-          height: 110px;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          width: ${CIRCLE_SIZE}px;
+          height: ${CIRCLE_SIZE}px;
+          pointer-events: none;
+          z-index: 2;
         }
         .icon-item {
-          transform: rotate(calc(360deg / var(--total) * var(--i)))
-            translate(48px)
-            rotate(calc(-360deg / var(--total) * var(--i)));
+          position: absolute;
+          animation: iconOrbit 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+          filter: drop-shadow(0 0 10px #ffdd48);
         }
-      }
-    `}</style>
-  </div>
-);
+        @keyframes iconOrbit {
+          0% {
+            filter: brightness(0.95) drop-shadow(0 0 8px #000000);
+          }
+          50% {
+            filter: brightness(1.25) drop-shadow(0 0 18px #fffbe8);
+          }
+          100% {
+            filter: brightness(0.95) drop-shadow(0 0 8px #ffdd48);
+          }
+        }
+        @media (max-width: 600px) {
+          .icons-circle {
+            width: 110px;
+            height: 110px;
+            left: 42%;
+          }
+        }
+      `}</style>
+    </div>
+  );
+};
 
 const WelcomeMessage: React.FC = () => (
   <div className="welcome-message">
