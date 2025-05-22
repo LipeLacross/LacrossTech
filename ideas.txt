@@ -1,0 +1,21 @@
+Soluções Web que impulsionam ideias.
+Sou Felipe Moreira, desenvolvedor Fullstack. Crio sistemas e sites personalizados para pequenos negócios que querem se destacar no digital. Agilidade, qualidade e foco no que realmente traz resultado.
+
+Vamos tirar sua ideia do papel?
+
+eu quero um site para apresentar ao redor da LacrossTech(modifique tudo), negocio responsavel por sites, aplicações, e desing gráfico
+
+eu felipe moreira sou o criado a ideia, sou o dev lipelacross
+o site é em next.js, com typescript e sass, tem que fazer uma reforma de palavras para e referir a LacrossTech
+
+Serviço	Custo Inicial (1º ano)	Custo Anual (Renovação)	Custo Mensal (Estimado)	Detalhes
+Registro de Domínio (.com.br)	R$ 40,00	R$ 40,00	R$ 3,75	Domínio registrado no Registro.br
+Hospedagem (Plano Premium)	R$ 155,88	R$ 155,88	R$ 12,99	Hospedagem otimizada para WordPress, com 1 caixa de e-mail grátis por 1 ano e Certificado SSL
+Certificado SSL	Incluso na hospedagem	Incluso	Incluso	Certificado SSL grátis com o plano de hospedagem
+E-mail Profissional	R$ 46,20	R$ 46,20	R$ 3,49	E-mail personalizado com o domínio do cliente
+Serviço 1 - Desenvolvimento de Site (site de apresentação com funcionalidades básicas)	R$ 1.500,00 - R$ 3.000,00	N/A	N/A	Design simples ou personalizado, com a configuração inicial do site
+Manutenção Anual	N/A	R$ 175,08	R$ 14,59	Renovação do domínio, hospedagem e e-mail, sem custos adicionais de suporte
+Manutenção Adicional (opcional)	N/A	N/A	R$ 50,00 - R$ 600	Suporte contínuo, atualizações regulares, backup adicional, ajustes de design e SEO
+Cobrança Mensal de Manutenção	N/A	R$ 200,00 - R$ 350,00	R$ 30,00 - R$ 50,00	Manutenção básica (renovação de domínio e e-mail)
+Serviço 3 - Artes Customizadas (opcional e com custo adicional para o cliente)	R$ 100,00 - R$ 900,00	N/A	N/A	Logo, cartão de visita, catálogo da loja, o banner frente, farda.
+Serviço 2 - Desenvolvimento de Aplicação de pequeno a médio porte (com back-end)	R$ 3.000,00 - R$ 7.000,00	N/A	N/A	Desenvolvimento completo de aplicação, incluindo back-end, banco de dados, integração com APIqueno a médio porte (com back-end)	Desenvolvimento completo de aplicação, incluindo back-end, banco de dados, integração com API
