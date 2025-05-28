@@ -11,11 +11,11 @@ import {
 } from "react-icons/fa";
 
 const ICONS = [
-  { icon: <FaGithub size={36} color="#FFDD48" />, key: "github" },
-  { icon: <FaLinkedin size={36} color="#FFDD48" />, key: "linkedin" },
-  { icon: <FaInstagram size={36} color="#FFDD48" />, key: "instagram" },
-  { icon: <FaGlobe size={36} color="#FFDD48" />, key: "globe" },
-  { icon: <FaWhatsapp size={36} color="#FFDD48" />, key: "whatsapp" },
+  { icon: <FaGithub color="#FFDD48" />, key: "github" },
+  { icon: <FaLinkedin color="#FFDD48" />, key: "linkedin" },
+  { icon: <FaInstagram color="#FFDD48" />, key: "instagram" },
+  { icon: <FaGlobe color="#FFDD48" />, key: "globe" },
+  { icon: <FaWhatsapp color="#FFDD48" />, key: "whatsapp" },
 ];
 
 const AnimatedProgressBar: React.FC<{ progress: number }> = ({ progress }) => (
@@ -106,9 +106,8 @@ const AnimatedIconsCircle: React.FC = () => {
         }
         @media (max-width: 600px) {
           .icons-circle {
-            width: 110px;
-            height: 110px;
-            left: 42%;
+            left: 50%;
+            top: 50%;
           }
         }
       `}</style>
