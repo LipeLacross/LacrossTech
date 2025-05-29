@@ -218,10 +218,10 @@ const SpectacularLoading: React.FC = () => {
         <div className="center-content">
           <div className="logo-flare">
             <Image
-              src="/logo.svg"
+              src="/logo_trans.png"
               alt="Logo LacrossTech"
-              width={100}
-              height={100}
+              width={80}
+              height={80}
               priority
               className="logo-img"
             />
@@ -264,7 +264,7 @@ const SpectacularLoading: React.FC = () => {
         }
         .logo-img {
           z-index: 3;
-          border-radius: 50%;
+          border-radius: 20%;
           filter: drop-shadow(0 0 28px #ffdd48)
             drop-shadow(0 0 18px #fffbe8);
           animation: logoPop 0.7s cubic-bezier(0.4, 0, 0.2, 1);

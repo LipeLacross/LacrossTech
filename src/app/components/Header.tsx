@@ -61,14 +61,14 @@ const Header: React.FC = () => {
           onClick={handleLinkClick}
         >
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             alt="LacrossTech Logo"
-            width={42}
-            height={42}
+            width={68}
+            height={68}
             className="cabecalho__logo"
             priority
           />
-          <span className="cabecalho__brand-name">LacrossTech</span>
+          <span className="cabecalho__brand-name"></span>
         </ScrollLink>
       </div>
       {/* Menu principal: maior, mais à esquerda */}
