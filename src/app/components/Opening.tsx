@@ -11,11 +11,11 @@ import {
 } from "react-icons/fa";
 
 const ICONS = [
-  { icon: <FaGithub color="#FFDD48" />, key: "github" },
-  { icon: <FaLinkedin color="#FFDD48" />, key: "linkedin" },
-  { icon: <FaInstagram color="#FFDD48" />, key: "instagram" },
-  { icon: <FaGlobe color="#FFDD48" />, key: "globe" },
-  { icon: <FaWhatsapp color="#FFDD48" />, key: "whatsapp" },
+  { icon: <FaGithub size={30} color="#FFDD48" />, key: "github" },
+  { icon: <FaLinkedin size={30} color="#FFDD48" />, key: "linkedin" },
+  { icon: <FaInstagram size={30} color="#FFDD48" />, key: "instagram" },
+  { icon: <FaGlobe size={30} color="#FFDD48" />, key: "globe" },
+  { icon: <FaWhatsapp size={30} color="#FFDD48" />, key: "whatsapp" },
 ];
 
 const AnimatedProgressBar: React.FC<{ progress: number }> = ({ progress }) => (
