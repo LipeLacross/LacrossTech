@@ -1,33 +1,40 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { FaCode, FaDatabase, FaPaintBrush, FaTools, FaSyncAlt } from "react-icons/fa";
+import { FaCode, FaDatabase, FaPaintBrush, FaTools, FaSyncAlt, FaServer  } from "react-icons/fa";
 import "../styles/Services.sass";
-
 const services = [
   {
     icon: <FaCode color="#FFDD48" size={28} />,
-    name: 'Desenvolvimento de Site (Apresentação, com revisão)',
+    name: 'Desenvolvimento de Site (Institucional)',
     initial: 'R$ 1.000,00 – R$ 3.000,00',
     annual: '-',
     monthly: '-',
-    details: 'Site institucional com design personalizado e configuração inicial. Inclui revisão.',
+    details: 'Criação de páginas web para apresentar sua empresa, produtos ou serviços, com foco em design e conteúdo. Inclui revisão.',
   },
   {
     icon: <FaDatabase color="#FFDD48" size={28} />,
-    name: 'Desenvolvimento de Aplicação (Pequeno a Médio Porte, com revisão)',
+    name: 'Desenvolvimento de Aplicação Web',
     initial: 'R$ 3.000,00 – R$ 8.000,00',
     annual: '-',
     monthly: '-',
-    details: 'Aplicação completa com front-end, back-end, banco de dados e integração com APIs. Inclui revisão.',
+    details: 'Desenvolvimento de softwares web com funcionalidades dinâmicas, como cadastro, autenticação e integração com outros serviços. Inclui revisão.',
   },
+  /*{
+    icon: <FaServer color="#FFDD48" size={28} />,
+    name: 'Sistemas Integrados',
+    initial: 'Sob consulta',
+    annual: '-',
+    monthly: '-',
+    details: 'Soluções robustas e personalizadas para automação de processos, gestão de dados e integração entre diferentes áreas da sua empresa.',
+  },*/
   {
     icon: <FaPaintBrush color="#FFDD48" size={28} />,
-    name: 'Artes de Design Gráfico (com revisão)',
+    name: 'Artes de Design Gráfico',
     initial: 'R$ 200,00 por item',
     annual: '-',
     monthly: '-',
-    details: 'Criação de logo, cartão de visita, catálogo, banner, fardamento, slides etc. Inclui uma rodada de revisão.',
+    details: 'Criação de logo, cartão de visita, catálogo, banner, fardamento, slides etc. Inclui revisão.',
   },
   {
     icon: <FaPaintBrush color="#FFDD48" size={28} />,
@@ -39,7 +46,7 @@ const services = [
   },
   {
     icon: <FaTools color="#FFDD48" size={28} />,
-    name: 'Manutenção Adicional (Sob demanda, com revisão)',
+    name: 'Manutenção Adicional',
     initial: 'A partir de R$ 50,00',
     annual: '-',
     monthly: '-',
@@ -55,13 +62,14 @@ const services = [
   },
   {
     icon: <FaSyncAlt color="#FFDD48" size={28} />,
-    name: 'Manutenção Mensal para Aplicações',
+    name: 'Manutenção Mensal para Aplicações Web',
     initial: '-',
     annual: '-',
     monthly: 'R$ 50,00 – R$ 400,00',
     details: 'Suporte contínuo e renovação de serviços, conforme a complexidade da aplicação.',
   },
 ];
+
 
 const MOBILE_BREAKPOINT = 700;
 
