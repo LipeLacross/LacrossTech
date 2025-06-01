@@ -57,7 +57,7 @@ const services = [
     name: 'Manutenção Mensal para Sites',
     initial: '-',
     annual: '-',
-    monthly: 'R$ 50,00 – R$ 100,00',
+    monthly: 'R$ 0,00 – R$ 50,00',
     details: 'Renovação de domínio, hospedagem, e-mail e SSL. Inclui suporte técnico básico.',
   },
   {
